@@ -1,0 +1,36 @@
+[debug] [2021-03-09T15:04:28.587Z] ----------------------------------------------------------------------
+[debug] [2021-03-09T15:04:28.589Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-03-09T15:04:28.589Z] CLI Version:   9.6.0
+[debug] [2021-03-09T15:04:28.589Z] Platform:      win32
+[debug] [2021-03-09T15:04:28.589Z] Node Version:  v14.16.0
+[debug] [2021-03-09T15:04:28.590Z] Time:          Tue Mar 09 2021 22:04:28 GMT+0700 (Indochina Time)
+[debug] [2021-03-09T15:04:28.590Z] ----------------------------------------------------------------------
+[debug] [2021-03-09T15:04:28.590Z] 
+[debug] [2021-03-09T15:04:28.596Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-03-09T15:04:28.597Z] > authorizing via signed-in user
+[debug] [2021-03-09T15:04:28.597Z] [iam] checking project realestateinvestment-a91b8 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-03-09T15:04:28.599Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/realestateinvestment-a91b8:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-03-09T15:04:28.621Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2021-03-09T15:04:28.623Z] > refreshing access token with scopes: []
+[debug] [2021-03-09T15:04:28.623Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-03-09T15:04:28.630Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-03-09T15:04:28.640Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:26:12)
+    at refreshTokens (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:297:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.getAccessToken (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:144:23)
+    at async Client.addAuthHeader (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:135:21)
+    at async Client.request (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:289:21)
+    at async Object.getDefaultHostingSite (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:66:9)
+    at async C:\Users\peedr\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:161:17
+[error] 
+[error] Error: Failed to get Firebase project realestateinvestment-a91b8. Please make sure the project exists and your account has permission to access it.
